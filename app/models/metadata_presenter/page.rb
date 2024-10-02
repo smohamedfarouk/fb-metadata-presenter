@@ -15,6 +15,7 @@ module MetadataPresenter
     QUESTION_PAGES = %w[page.singlequestion page.multiplequestions].freeze
     USES_HEADING = %w[
       page.content
+      page.repeatablepage
       page.checkanswers
       page.confirmation
       page.multiplequestions

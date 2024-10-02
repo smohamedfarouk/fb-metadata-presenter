@@ -58,6 +58,9 @@
             "$ref": "page.multiplequestions"
           },
           {
+            "$ref": "page.repeatablepage"
+          },
+          {
             "$ref": "page.singlequestion"
           }
         ]
