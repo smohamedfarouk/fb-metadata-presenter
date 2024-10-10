@@ -1,0 +1,42 @@
+{
+    "$id": "http://gov.uk/schema/v1.0.0/dropdown",
+    "_name": "component.dropdown",
+    "title": "Dropdown",
+    "description": "Allows users to select an option from a predefined list",
+    "type": "object",
+    "properties": {
+      "_type": {
+        "const": "dropdown"
+      },
+      "options": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": ["id", "name"]
+        },
+        "minItems": 1,
+        "description": "List of options that users can choose from"
+      }
+    },
+    "required": ["_type", "options"],
+    "allOf": [
+      {
+        "$ref": "definition.field"
+      },
+      {
+        "$ref": "definition.width_class.input"
+      },
+      {
+        "$ref": "validations#/definitions/select_bundle"
+      }
+    ]
+  }
+  

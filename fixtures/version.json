@@ -204,6 +204,52 @@
       ]
     },
     {
+      "_id": "page.select-country",
+      "url": "select-country",
+      "body": "Body section",
+      "lede": "",
+      "_type": "page.singlequestion",
+      "_uuid": "b234e5a6-f987-421b-9365-25d5506a4f62",
+      "heading": "",
+      "components": [
+        {
+          "_id": "select-country_country",
+          "hint": "Select your country from the list",
+          "name": "select-country_country",
+          "_type": "dropdown",
+          "_uuid": "a56b78c2-e12f-4999-92b6-f9552e4e013f",
+          "label": "Country selection",
+          "errors": {},
+          "legend": "Confirm your country",
+          "collection": "components",
+          "validation": {
+            "required": true
+          },
+          "options": [
+            {
+              "id": "us",
+              "name": "United States"
+            },
+            {
+              "id": "ca",
+              "name": "Canada"
+            },
+            {
+              "id": "uk",
+              "name": "United Kingdom"
+            },
+            {
+              "id": "au",
+              "name": "Australia"
+            }
+          ],
+          "include_blank": true,
+          "default": "us"
+        }
+      ],
+      "section_heading": ""
+    },    
+    {
       "_id": "page.your-age",
       "url": "your-age",
       "body": "Body section",
