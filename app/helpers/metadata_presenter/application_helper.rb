@@ -38,7 +38,7 @@ module MetadataPresenter
     end
 
     def default_item_title(component_type)
-      return unless %w[checkboxes radios].include?(component_type)
+      return unless %w[checkboxes radios dropdown].include?(component_type)
 
       MetadataPresenter::DefaultMetadata["component.#{component_type}"]['items']&.first&.[]('label')
     end

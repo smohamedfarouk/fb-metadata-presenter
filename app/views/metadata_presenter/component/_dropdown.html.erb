@@ -1,18 +1,17 @@
-
-<% options = options_from_collection_for_select(
-      component.options, :id, :name, selected_option || component.default
-    ) %>
+<%# Map the options for the dropdown %>
+<% options = component.metadata.options.map { |option| [option["name"], option["id"]] } %>
 
 <%# Render the dropdown element using the Rails form builder %>
-<%= form.govuk_collection_select(
-    component.id.to_sym,
-    options,
-    label: { text: component.label || 'Select Option' },
+<%= f.govuk_select(
+    component.metadata._id.to_sym, # Use the _id for the component
+    options_for_select(options, component.metadata.default), # Use options_for_select and set the default value
+    label: { text: component.metadata.label || 'Select Option' }, # Use the label from the metadata
     hint: {
       data: { "fb-default-text" => default_text('hint'), "fb-node" => "hint" },
-      text: component.hint || 'Please select one of the options.'
+      text: component.metadata.hint || 'Please select one of the options.' # Use the hint from the metadata
     },
-    name: "answers[#{component.name}]",
-    include_blank: component.include_blank?,
-    aria: { describedby: "#{component.name}_hint" }
+    name: "answers[#{component.metadata.name}]", # Use the name from the metadata
+    include_blank: component.metadata.include_blank, # Include blank option if specified
+    aria: { describedby: "#{component.metadata.name}_hint" } # Set ARIA attributes for accessibility
 ) %>
+
