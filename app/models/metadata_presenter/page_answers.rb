@@ -37,7 +37,7 @@ module MetadataPresenter
       elsif component && component.type == 'address'
         address_answer(method_name.to_s)
       elsif component && component.type == 'dropdown'
-        dropdown_answer(component.id)
+        answers[method_name.to_s].to_a
       else
         sanitize(answers[method_name.to_s])
       end
