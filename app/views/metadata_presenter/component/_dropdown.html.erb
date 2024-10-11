@@ -1,6 +1,8 @@
+
 <% options = options_from_collection_for_select(
       component.options, :id, :name, selected_option || component.default
     ) %>
+
 <%# Render the dropdown element using the Rails form builder %>
 <%= form.govuk_collection_select(
     component.id.to_sym,
