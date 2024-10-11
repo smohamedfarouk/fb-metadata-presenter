@@ -36,6 +36,8 @@ module MetadataPresenter
         answers[method_name.to_s].to_a
       elsif component && component.type == 'address'
         address_answer(method_name.to_s)
+      elsif component && component.type == 'dropdown'
+        answers[method_name.to_s].to_a
       else
         sanitize(answers[method_name.to_s])
       end
@@ -188,5 +190,14 @@ module MetadataPresenter
         answers.fetch(component_id, {})
       )
     end
+
+    def dropdown_answer(component_id)
+      @dropdown_answers ||= {}
+  
+      @dropdown_answers[component_id] ||= MetadataPresenter::DropdownFieldset.new(
+        answers.fetch(component_id, nil)
+      )
+    end
+    
   end
 end

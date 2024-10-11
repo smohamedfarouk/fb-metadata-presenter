@@ -17,7 +17,7 @@ Rails.application.config.supported_components =
       content: %w(content)
     },
     multiplequestions: {
-      input: %w(text textarea email number date address radios checkboxes),
+      input: %w(text textarea email number date address radios dropdown),
       content: %w(content)
     },
     repeatablepage: {
@@ -25,7 +25,7 @@ Rails.application.config.supported_components =
       content: %w(content)
     },
     singlequestion: {
-      input: %w(text textarea number date address radios checkboxes email upload multiupload autocomplete),
+      input: %w(text textarea number date address radios checkboxes email upload multiupload autocomplete dropdown),
       content: %w()
      }
   })

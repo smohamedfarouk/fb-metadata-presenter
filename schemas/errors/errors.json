@@ -28,6 +28,14 @@
         }
       ]
     },
+    "dropdown": {
+      "title": "Error strings for required dropdown fields",
+      "allOf": [
+        {
+          "$ref": "#/definitions/error_strings"
+        }
+      ]
+    },
     "min_length": {
       "title": "Error strings for minimum length",
       "allOf": [
@@ -109,6 +117,17 @@
           "properties": {
             "address": {
               "$ref": "#/definitions/address"
+            }
+          }
+        }
+      }
+    },
+    "dropdown_errors": {
+      "properties": {
+        "errors": {
+          "properties": {
+            "dropdown": {
+              "$ref": "#/definitions/dropdown"
             }
           }
         }

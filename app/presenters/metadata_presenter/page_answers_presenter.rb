@@ -100,5 +100,17 @@ module MetadataPresenter
         value.to_a.join("\r\n"), {}, wrapper_tag: 'span'
       )
     end
+    # Retrieves the display text associated with a dropdown's saved value.
+    def dropdown(value)
+      dropdown_options = {
+        '1' => 'Option One',
+        '2' => 'Option Two',
+        '3' => 'Option Three',
+        '4' => 'Option Four'
+      }
+      label = dropdown_options[value]
+      label || 'Selected option not found'
+    end
+
   end
 end

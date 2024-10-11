@@ -1,0 +1,31 @@
+{
+  "_id": "component.dropdown",
+  "_type": "dropdown",
+  "errors": {},
+  "label": "Dropdown question",
+  "hint": "Select an option from the list",
+  "name": "component-name-dropdown",
+  "validation": {
+    "required": true
+  },
+  "options": [
+    {
+      "id": "option1",
+      "name": "Option 1"
+    },
+    {
+      "id": "option2",
+      "name": "Option 2"
+    },
+    {
+      "id": "option3",
+      "name": "Option 3"
+    },
+    {
+      "id": "option4",
+      "name": "Option 4"
+    }
+  ],
+  "include_blank": true,
+  "default": "option2"
+}
