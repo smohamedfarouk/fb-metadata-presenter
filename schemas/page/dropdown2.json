@@ -1,0 +1,61 @@
+{
+  "$id": "http://gov.uk/schema/v1.0.0/page/checkanswers",
+  "_name": "page.dropdown2",
+  "title": "Check answers",
+  "description": "Let users check and change their answers before submitting",
+  "type": "object",
+  "properties": {
+    "_type": {
+      "const": "page.checkanswers"
+    },
+    "heading": {
+      "type": "string",
+      "default": "Check your answers"
+    },
+    "summary_of": {
+      "title": "Summary of",
+      "description": "Page/section that summary summarises"
+    },
+    "send_heading": {
+      "title": "Send heading",
+      "description": "Heading to display before accept and send button",
+      "type": "string",
+      "content": true,
+      "default": "Now send your application"
+    },
+    "send_body": {
+      "title": "Send content",
+      "description": "Content to display before accept and send button - use [markdown](https://www.gov.uk/guidance/how-to-publish-on-gov-uk/markdown) to format text or add hyperlinks",
+      "type": "string",
+      "content": true,
+      "multiline": true,
+      "default": "By submitting this application you confirm that, to the best of your knowledge, the details you are providing are correct."
+    },
+    "components": {
+      "title": "Components",
+      "description": "The form or content elements used on the page",
+      "type": "array",
+      "items": {
+        "$ref": "component.content"
+      }
+    },
+    "extra_components": {
+      "title": "Extra Components",
+      "description": "More form or content elements used on the page",
+      "type": "array",
+      "items": {
+        "$ref": "component.content"
+      }
+    }
+  },
+  "required": [
+    "heading",
+    "send_heading",
+    "send_body"
+  ],
+  "allOf": [
+    {
+      "$ref": "definition.page.form"
+    }
+  ]
+}

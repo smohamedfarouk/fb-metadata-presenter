@@ -38,6 +38,8 @@ module MetadataPresenter
         address_answer(method_name.to_s)
       elsif component && component.type == 'dropdown'
         answers[method_name.to_s].to_a
+      elsif component && component.type == 'dropdown2'
+        answers[method_name.to_s].to_a
       else
         sanitize(answers[method_name.to_s])
       end
