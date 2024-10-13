@@ -1,0 +1,104 @@
+<div id="final-dropdown-container">
+  <h2>Question</h2>
+  <input type="text" id="main-question-input" placeholder="What is your favorite person?" required />
+
+  <h2>Add Dropdown Options</h2>
+  <div id="options-list"></div>
+
+  <button id="add-option" type="button">Add Option</button>
+  <button id="submit-options" type="button" style="display:none;">Submit</button>
+
+  <div id="final-question-container" style="display:none; margin-top: 20px;">
+    <div>
+      <input type="text" id="final-question" style="font-weight:bold;" readonly />
+    </div>
+    <div style="margin-top: 10px;">
+      <select id="final-dropdown" name="answers[dynamic_dropdown]">
+        <option value="">Select an Option</option>
+      </select>
+    </div>
+    <div id="selected-answer" style="display:none; margin-top: 10px;"></div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let optionCount = 0;
+
+    // Function to update the final dropdown with options
+    function updateDropdown() {
+      const finalDropdown = document.getElementById('final-dropdown');
+      finalDropdown.innerHTML = '<option value="">Select an Option</option>'; // Clear existing options
+      const optionInputs = document.querySelectorAll('#options-list input[type="text"]');
+      optionInputs.forEach(input => {
+        if (input.value) {
+          finalDropdown.appendChild(new Option(input.value, input.value));
+        }
+      });
+    }
+
+    // Add option button event listener
+    document.getElementById('add-option').addEventListener('click', function () {
+      optionCount++;
+      const optionsList = document.getElementById('options-list');
+
+      const optionHtml = `
+        <div>
+          <input type="text" placeholder="Enter Option ${optionCount}" required />
+          <button type="button" class="remove-option">Remove</button>
+        </div>
+      `;
+      optionsList.insertAdjacentHTML('beforeend', optionHtml);
+
+      // Show the submit button when at least one option is added
+      document.getElementById('submit-options').style.display = "block";
+
+      // Handle the removal of options
+      optionsList.lastElementChild.querySelector('.remove-option').addEventListener('click', function () {
+        this.parentElement.remove();
+        optionCount--; // Decrease count on removal
+        updateDropdown(); // Update dropdown after removal
+      });
+
+      // Update dropdown with the newly added option
+      updateDropdown();
+    });
+
+    // Submit options event listener
+    document.getElementById('submit-options').addEventListener('click', function () {
+      const question = document.getElementById('main-question-input').value.trim();
+      if (question) {
+        // Set and display the final question and dropdown
+        const finalQuestionInput = document.getElementById('final-question');
+        finalQuestionInput.value = question;
+        finalQuestionInput.removeAttribute('readonly'); // Make the question editable
+        document.getElementById('final-question-container').style.display = 'block';
+
+        // Update the final dropdown with options
+        updateDropdown();
+
+        // Hide the Question and Dropdown Options section after submission
+        document.getElementById('main-question-input').style.display = 'none';
+        document.querySelector('h2:first-of-type').style.display = 'none'; // Hide the first "Question" heading
+        document.querySelector('h2:nth-of-type(2)').style.display = 'none'; // Hide the "Add Dropdown Options" heading
+        document.getElementById('options-list').style.display = 'none';
+        document.getElementById('add-option').style.display = 'none';
+        document.getElementById('submit-options').style.display = 'none';
+
+        // Show the selected answer dynamically
+        const finalDropdown = document.getElementById('final-dropdown');
+        const selectedAnswerDiv = document.getElementById('selected-answer');
+        selectedAnswerDiv.style.display = 'block'; // Show the selected answer div
+        selectedAnswerDiv.textContent = 'Selected Answer: ';
+
+        // Update the selected answer display on change
+        finalDropdown.addEventListener('change', function () {
+          const selectedValue = finalDropdown.value;
+          selectedAnswerDiv.textContent = `Selected Answer: ${selectedValue}`;
+        });
+      } else {
+        alert('Please enter a question before submitting.');
+      }
+    });
+  });
+</script>

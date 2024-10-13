@@ -1,0 +1,7 @@
+{
+	"_id": "definition.dropdown",
+	"_type": "dropdown",
+	"label": "Option",
+	"hint": "[Hint text (optional)]",
+	"value": "dropdown-value"
+}

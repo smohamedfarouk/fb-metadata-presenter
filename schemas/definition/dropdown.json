@@ -1,0 +1,31 @@
+{
+    "$id": "http://gov.uk/schema/v1.0.0/definition/dropdown",
+    "_name": "definition.dropdown",
+    "idSeed": "value",
+    "title": "dropdown option",
+    "description": "Component that provides a dropdown option",
+    "type": "object",
+    "properties": {
+      "_type": {
+        "const": "dropdown"
+      },
+      "hint": {
+        "title": "Hint text",
+        "description": "Text to help users understand an option - appears in grey under the label",
+        "type": "string",
+        "content": true
+      },
+      "conditional_component": {
+        "$ref": "definition.conditionalcomponent"
+      }
+    },
+    "allOf": [
+      {
+        "$ref": "definition.option"
+      }
+    ],
+    "required": [
+      "label"
+    ]
+  }
+  
