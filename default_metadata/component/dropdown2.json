@@ -3,25 +3,41 @@
   "_type": "dropdown2",
   "errors": {},
   "hint": "",
+  "text_input": {
+    "_id": "component_dropdown2_text_input",
+    "_type": "text",
+    "label": "Question 1",
+    "hint": "",
+    "value": "",
+    "placeholder": "Question 1"
+  },
+  "text_input_2": {
+    "_id": "component_dropdown2_text_input_2",
+    "_type": "text",
+    "label": "Question 2",
+    "hint": "",
+    "value": "",
+    "placeholder": "Question 2"
+  },
   "items": [
     {
-      "_id": "component_checkbox_1",
-      "_type": "checkbox",
-      "label": "Option",
+      "_id": "component_dropdown2_1",
+      "_type": "dropdown2",
+      "label": "Dropdown Option 1",
       "hint": "",
       "value": "value-1"
     },
     {
-      "_id": "component_checkbox_2",
-      "_type": "checkbox",
-      "label": "Option",
+      "_id": "component_dropdown2_2",
+      "_type": "dropdown2",
+      "label": "Dropdown Option 2",
       "hint": "",
       "value": "value-2"
     }
   ],
   "name": "component-name",
-  "legend": "Question",
+  "legend": "Dropdown Question",
   "validation": {
-    "required": true
+    "required": false
   }
 }

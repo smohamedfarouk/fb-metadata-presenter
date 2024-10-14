@@ -1,7 +1,7 @@
 {
 	"_id": "definition.dropdown2",
 	"_type": "dropdown2",
-	"label": "Option",
+	"label": "Dropdown Option",
 	"hint": "[Hint text (optional)]",
-	"value": "checkbox-value"
+	"value": "radio-value"
 }

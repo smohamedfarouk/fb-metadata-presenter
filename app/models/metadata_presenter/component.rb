@@ -49,7 +49,7 @@ class MetadataPresenter::Component < MetadataPresenter::Metadata
     autocomplete? ? MetadataPresenter::AutocompleteItem : MetadataPresenter::Item
   end
 
-  SUPPORTS_BRANCHING = %w[radios checkboxes dropdown].freeze
+  SUPPORTS_BRANCHING = %w[radios checkboxes dropdown dropdown2].freeze
 
   def supports_branching?
     type.in?(SUPPORTS_BRANCHING)

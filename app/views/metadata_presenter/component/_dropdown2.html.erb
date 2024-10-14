@@ -1,13 +1,26 @@
-<%=
-  f.govuk_collection_check_boxes component.id.to_sym,
-    component.items,
-    :id,
-    :name,
-    :description,
-    legend: { text: input_title },
-    hint: {
-      data: { "fb-default-text" => default_text('hint') },
-      text: component.hint
-    },
-    include_hidden: false
+<%= f.govuk_text_field component.text_input["_id"].to_sym,
+  label: { text: component.text_input["label"] },
+  hint: { text: component.text_input["hint"] },
+  name: "answers[#{component.text_input["_id"]}]",
+  value: component.text_input["value"],
+  placeholder: component.text_input["placeholder"]
+%>
+
+<%= f.govuk_text_field component.text_input_2["_id"].to_sym,
+  label: { text: component.text_input_2["label"] },
+  hint: { text: component.text_input_2["hint"] },
+  name: "answers[#{component.text_input_2["_id"]}]",
+  value: component.text_input_2["value"],
+  placeholder: component.text_input_2["placeholder"]
+%>
+
+<%= f.govuk_collection_select component.id.to_sym,
+  component.items,
+  :value,
+  :label,
+  legend: { text: component.legend },
+  hint: {
+    data: { "fb-default-text" => default_text('hint') },
+    text: component.hint
+  }
 %>
