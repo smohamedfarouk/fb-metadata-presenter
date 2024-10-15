@@ -52,7 +52,25 @@
         }
       ]
     },
-    "errors_required": {
+
+    "newaddress": {
+      "title": "Address",
+      "description": "Address required fields",
+      "oneOf": [
+        {
+          "$ref": "definition.conditional.boolean"
+        }
+      ],
+      "default": true
+    },
+    "errors_newaddress": {
+      "title": "Error messages for 'Address'",
+      "allOf": [
+        {
+          "$ref": "#/definitions/error_strings"
+        }
+      ]
+    },    "errors_required": {
       "title": "Error messages for ‘Required’",
       "allOf": [
         {

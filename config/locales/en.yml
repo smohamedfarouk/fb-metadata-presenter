@@ -242,3 +242,10 @@ en:
         county: County (optional)
         postcode: Postcode
         country: Country
+      metadata_presenter/newaddress_fieldset:
+        address_line_one: Address line 1
+        address_line_two: Address line 2 (optional)
+        city: Town or city
+        county: County (optional)
+        postcode: Postcode
+        country: Country

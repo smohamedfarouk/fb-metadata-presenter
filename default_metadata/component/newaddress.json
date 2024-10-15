@@ -1,0 +1,13 @@
+{
+  "_id": "component.newaddress",
+  "_type": "newaddress",
+  "errors": {},
+  "legend": "Address question",
+  "hint": "",
+  "name": "component-name",
+  "validation": {
+    "required": true,
+    "address": true,
+    "postcode": true
+  }
+}

@@ -103,6 +103,13 @@ module MetadataPresenter
         value.to_a.join("\r\n"), {}, wrapper_tag: 'span'
       )
     end
+
+
+    def newaddress(value)
+      view.simple_format(
+        value.to_a.join("\r\n"), {}, wrapper_tag: 'span'
+      )
+    end
     # Retrieves the display text associated with a dropdown's saved value.
     def dropdown(value)
       dropdown_options = {
